@@ -1,0 +1,108 @@
+
+// Colores
+$color__blanco: #fefefe
+$color__negro: #13252c
+$color__salmon: #feb58b
+$color__amarillo: #f9de83
+$color__azul: #a0d8e7
+$color__verde: #adecb2
+
+// Medidas
+$container: 40rem
+$container--small: 30rem
+
+// Tipografias
+$font__principal: "recolectaalt"
+$font__textos: "araboto"
+
+@font-face
+  font-family: $font__principal
+  src: url(../fonts/recoletaalt-medium.woff2) format("woff2")
+  font-display: swap
+
+@font-face
+  font-family: $font__textos
+  src: url(../fonts/araboto-medium-400.woff2) format("woff2")
+  font-display: swap
+
+// Base
+
+body
+  font-family: $font__textos
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font__principal
+  font-weight: normal
+
+// Componentes
+
+.container
+  max-width: $container
+  margin: 0 auto
+  padding: 1rem
+  &--small
+    max-width: $container--small
+
+.button
+  display: inline-block
+  border: 2px solid $color__negro
+  padding: .5rem
+  text-decoration: none
+  color: $color__negro
+  $distancia: .3rem
+  box-shadow: $distancia $distancia 0 $color__negro
+  background-color: $color__salmon
+  &:hover
+    background-color: darken($color__salmon, 5%)
+  &--transparente
+    background-color: initial
+    box-shadow: initial
+    border: initial
+    &:hover
+      background-color: initial
+      color: $color__salmon
+  &--redondo
+    border-radius: 1.5rem
+    box-shadow: 0 $distancia 0 $color__negro
+  &--amarillo
+    background-color: $color__amarillo
+    &:hover
+      background-color: darken($color__amarillo, 5%)
+  &--verde
+    background-color: $color__verde
+    &:hover
+      background-color: darken($color__verde, 5%)
+  &--azul
+    background-color: $color__azul
+    &:hover
+      background-color: darken($color__azul, 5%)
+
+.nav
+  &__ul
+    list-style: none
+    padding: 0
+    display: flex
+    gap: 1rem
+
+.header
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__logo
+    display: flex
+    gap: 1rem
+  &__titulo
+    margin: 0
+// Landing
+
+.landing
+  &__titulo
+    font-size: 4rem
+    margin-bottom: 2rem
+
+.footer
+  &__texto
+    margin-bottom: 0
+  &__fecha
+    font-size: 1.5rem
